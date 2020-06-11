@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ControleDeSalasBackEnd.Models;
+using ControleDeSalasBackEnd.Repositorio;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,8 +28,15 @@ namespace ControleDeSalasBackEnd
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SalasDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
+            // Conexão com o Banco de Dados e retorna os registros existentes na tabela Salas
+            services.AddDbContext<SalasDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));            
+            services.AddTransient<ISalasRepositorio, SalaRepositorio>();
+
+            // Conexão com o Banco de Dados e retorna os registros existentes na tabela Agendamentos
+            services.AddDbContext<AgendamentosDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IAgendamentosRepository, AgendamentosRepository>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
