@@ -36,7 +36,11 @@ namespace ControleDeSalasBackEnd
             // Conexão com o Banco de Dados e retorna os registros existentes na tabela Agendamentos
             services.AddDbContext<AgendamentosDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IAgendamentosRepository, AgendamentosRepository>();
-            
+
+            // Conexão com o Banco de Dados e retorna os registros existentes na tabela Agendamentos fazendo right join com Salas
+            services.AddDbContext<AgendamentosEndSalasDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IAgendamentosEndSalasRepository, AgendamentosEndSalasRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
