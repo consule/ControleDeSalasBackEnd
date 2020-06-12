@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ControleDeSalasBackEnd.Repositorio
 {
-    public interface ISalasRepositorio
+    public interface ISalasRepository
     {
         IEnumerable<Salas> GetAll();
     }

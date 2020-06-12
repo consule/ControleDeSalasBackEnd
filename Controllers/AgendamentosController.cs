@@ -25,5 +25,20 @@ namespace ControleDeSalasBackEnd.Controllers
         {
             return _agendamentosRepository.GetAll();
         }
+
+
+
+        [HttpPost]
+        public IActionResult Create([FromBody] Agendamentos agendamentos)
+        {
+            if(agendamentos == null)
+            {
+                return BadRequest();
+            }
+
+            _agendamentosRepository.Add(agendamentos);
+
+            return Ok();
+        }
     }
 }

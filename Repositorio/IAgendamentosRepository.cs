@@ -10,7 +10,7 @@ namespace ControleDeSalasBackEnd.Repositorio
     {
         // Retorna todos os agendamentos existentes
         List<Agendamentos> GetAll();
-
+        void Add(Agendamentos agendamentos);
 
     }
 
