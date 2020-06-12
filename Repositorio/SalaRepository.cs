@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ControleDeSalasBackEnd.Repositorio
 {
-    public class SalaRepositorio : ISalasRepositorio
+    public class SalaRepository : ISalasRepository
     {
         private readonly SalasDBContext _contexto;
-        public SalaRepositorio(SalasDBContext ctx)
+        public SalaRepository(SalasDBContext ctx)
         {
             _contexto = ctx;
         }

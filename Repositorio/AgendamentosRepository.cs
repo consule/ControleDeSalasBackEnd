@@ -15,6 +15,11 @@ namespace ControleDeSalasBackEnd.Repositorio
             _contexto = _ctx;
         }
 
+        public void Add(Agendamentos agendamentos)
+        {
+            _contexto.Agendamentos.Add(agendamentos);
+            _contexto.SaveChanges();
+        }
 
         public List<Agendamentos> GetAll()
         {

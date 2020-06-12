@@ -13,8 +13,8 @@ namespace ControleDeSalasBackEnd.Controllers
     [ApiController]
     public class SalasController : ControllerBase
     {
-        private readonly ISalasRepositorio _salaRepositorio;
-        public SalasController(ISalasRepositorio salaRepo)
+        private readonly ISalasRepository _salaRepositorio;
+        public SalasController(ISalasRepository salaRepo)
         {
             _salaRepositorio = salaRepo;
         }

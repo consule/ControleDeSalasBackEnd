@@ -31,7 +31,7 @@ namespace ControleDeSalasBackEnd
             services.AddControllers();
             // Conexão com o Banco de Dados e retorna os registros existentes na tabela Salas
             services.AddDbContext<SalasDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));            
-            services.AddTransient<ISalasRepositorio, SalaRepositorio>();
+            services.AddTransient<ISalasRepository, SalaRepository>();
 
             // Conexão com o Banco de Dados e retorna os registros existentes na tabela Agendamentos
             services.AddDbContext<AgendamentosDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
