@@ -4936,11 +4936,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Code\\SmarAPD\\ControleDeSalasBackEnd\\ControleDeSalasBackEnd.csproj",
+      "projectUniqueName": "C:\\code\\ControleDeSalasBackEnd\\ControleDeSalasBackEnd.csproj",
       "projectName": "ControleDeSalasBackEnd",
-      "projectPath": "E:\\Code\\SmarAPD\\ControleDeSalasBackEnd\\ControleDeSalasBackEnd.csproj",
+      "projectPath": "C:\\code\\ControleDeSalasBackEnd\\ControleDeSalasBackEnd.csproj",
       "packagesPath": "C:\\Users\\cristiano.consule\\.nuget\\packages\\",
-      "outputPath": "E:\\Code\\SmarAPD\\ControleDeSalasBackEnd\\obj\\",
+      "outputPath": "C:\\code\\ControleDeSalasBackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cristiano.consule\\AppData\\Roaming\\NuGet\\NuGet.Config",

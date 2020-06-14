@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LqMZmKfPbrbuEyI8IJ18N3LDywUK2p68yPb6YqrWUtrzmz3S2QuBsWC2BzheRtMyfhGj792qx47bkom61XK+cw==",
+  "dgSpecHash": "p9QRFlBiUmoSVT4ETrflfy9+tFKxL7wLWTjvSixW8OHl23HxsMxmF9lpvVbfS/ZJ8q1g8kbzGtsFhRqdnzJpZg==",
   "success": true,
-  "projectFilePath": "E:\\Code\\SmarAPD\\ControleDeSalasBackEnd\\ControleDeSalasBackEnd.csproj",
+  "projectFilePath": "C:\\code\\ControleDeSalasBackEnd\\ControleDeSalasBackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cristiano.consule\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\cristiano.consule\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

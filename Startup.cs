@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,7 +29,18 @@ namespace ControleDeSalasBackEnd
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder
+                        .AllowAnyMethod()
+                        .AllowCredentials()
+                        .SetIsOriginAllowed((host) => true)
+                        .AllowAnyHeader());
+            });            
+
             services.AddControllers();
+
             // Conexão com o Banco de Dados e retorna os registros existentes na tabela Salas
             services.AddDbContext<SalasDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));            
             services.AddTransient<ISalasRepository, SalaRepository>();
@@ -56,6 +68,8 @@ namespace ControleDeSalasBackEnd
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {
