@@ -41,10 +41,10 @@ namespace ControleDeSalasBackEnd.Controllers
             return Ok();
         }
 
-        [HttpGet("agendamentosExistentes")]
-        public List<Agendamentos> GetAgendamentoExistente([FromBody] Agendamentos agendamentos)
+        [HttpGet("agendamentosExistentes/{idSala}/{dataHoraInicial}/{dataHoraFinal}")]
+        public List<Agendamentos> GetAgendamentoExistente(int idSala, DateTime dataHoraInicial, DateTime dataHoraFinal)
         {
-            return _agendamentosRepository.GetAgendamentosExistentes(agendamentos);
+            return _agendamentosRepository.GetAgendamentosExistentes(idSala, dataHoraInicial,  dataHoraFinal);
         }
     }
 }

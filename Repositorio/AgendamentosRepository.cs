@@ -21,13 +21,15 @@ namespace ControleDeSalasBackEnd.Repositorio
             _contexto.SaveChanges();
         }
 
-        public List<Agendamentos> GetAgendamentosExistentes(Agendamentos agendamentos)
+        public List<Agendamentos> GetAgendamentosExistentes(int idSala, DateTime dataHoraInicial, DateTime dataHoraFinal)
         {
             var query = (from t in _contexto.Agendamentos
                          where
-                         agendamentos.DataHoraInicial >= t.DataHoraInicial &&
-                         agendamentos.DataHoraFinal <= t.DataHoraFinal &&
-                         t.IdSala == agendamentos.IdSala
+                          t.DataHoraInicial >=  dataHoraInicial  &&
+                          t.DataHoraInicial <= dataHoraFinal ||
+                          t.DataHoraFinal >= dataHoraInicial &&
+                          t.DataHoraFinal <= dataHoraFinal &&
+                         idSala == t.IdSala
                          select t);
             return query.ToList();
         }
