@@ -42,7 +42,7 @@ namespace ControleDeSalasBackEnd.Controllers
         }
 
         [HttpGet("agendamentosExistentes")]
-        public List<Agendamentos> GetAgendamentoExistente([FromBody] Agendamentos agendamentos) 
+        public List<Agendamentos> GetAgendamentoExistente([FromBody] Agendamentos agendamentos)
         {
             return _agendamentosRepository.GetAgendamentosExistentes(agendamentos);
         }
