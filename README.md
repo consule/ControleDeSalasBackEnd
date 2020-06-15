@@ -12,7 +12,7 @@ Este projeto foi utilizado:
 
 Você deverá criar um banco de dados e duas tabelas para que sejam criados os registros da aplicação:
 
-Utilizaremos o [SQL Server 2019 Express](https://go.microsoft.com/fwlink/?linkid=866658) e para a criação do bando de dados e das tabelas utilizaremos o [Microsoft SQL Server Management Studio](https://docs.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15).
+Utilizaremos o [SQL Server 2019 Express](https://go.microsoft.com/fwlink/?linkid=866658) que será nosso provider e para a criação do bando de dados e das tabelas utilizaremos o [Microsoft SQL Server Management Studio](https://docs.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15).
 
 Com as duas ferramentas acima instaladas vamos aos comandos para criação do banco de dados, tabelas e insersão de dados nessas tabelas. 
 
