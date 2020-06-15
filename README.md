@@ -1,27 +1,30 @@
-# ControleDeSalasFront
+# Controle De Salas - BackEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
+Este projeto foi utilizado:
 
-## Development server
+DotNet Core 3.1
+Entity Framework Core
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+[Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Servidor de desenvolvimento
 
-## Build
+Este projeto é composto de duas partes, sendo esta o BackEnd da aplicação. 
+O FrontEnd você encontra neste link: (https://github.com/consule/ControleDeSalasFront)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Executando o projeto
 
-## Running unit tests
+1. Clone o projeto com o comando (https://github.com/consule/ControleDeSalasFront.git) para uma pasta de sua preferencia. 
+2. Execute o comando `cd ControleDeSalasFront` para entrar na pasta que acabou de ser clonada
+3. Para a instalação dos modulos execute: `npm install` ou apenas `npm i` (Aguarde até que os modulos existenetes sejam instalados automáticamente);
+4. Execute `ng serve` para um servidor dev. 
+5. Navegue até `http://localhost:4200/`. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
-## Running end-to-end tests
+## Atenção com as Services
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Você pode encontrar as services no caminho `ControleDeSalasFront\src\app\services`. Elas são o ponto de entrada  que alimentam a aplicação e exibem os dados. 
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Lembre-se sempre de conferir a porta de entrada existente (essa porta é gerada pelo FrontEnd(, e para facilitar existe uma variável em cada um desses arquivos com o nome `const apiUrl`.
