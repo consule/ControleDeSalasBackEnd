@@ -68,11 +68,11 @@ GO```
 
 ###### Populando a tabela Salas:
 
-```insert into Salas (Nome, Capacidade, DataCriacao) values ('Reunião', 45, getdate())```
+`insert into Salas (Nome, Capacidade, DataCriacao) values ('Reunião', 45, getdate())`
 
-```insert into Salas (Nome, Capacidade, DataCriacao) values ('Oval', 10, getdate())```
+`insert into Salas (Nome, Capacidade, DataCriacao) values ('Oval', 10, getdate())`
 
-```insert into Salas (Nome, Capacidade, DataCriacao) values ('Descanso', 15, getdate())```
+`insert into Salas (Nome, Capacidade, DataCriacao) values ('Descanso', 15, getdate())`
 
 Obs: A tabela de agendamentos vai ser populada pelo FrontEnd
 
@@ -85,6 +85,7 @@ Obs: A tabela de agendamentos vai ser populada pelo FrontEnd
 
 ###### Recupera as  salas existentes: 
 GET `http://localhost:52611/api/Salas/`
+
 ```
 [
   {
@@ -104,6 +105,7 @@ GET `http://localhost:52611/api/Salas/`
 ###### Recupera os agendamentos  existentes:
 GET
 `http://localhost:52611/api/Agendamentos/`
+
 ```
 [
   {
@@ -129,6 +131,7 @@ GET
   }
 ]
 ```
+
 ###### Recupera agendamentos existentes caso a tentativa de reserva esteja dentro do intervalo solicitado: 
 GET FromBody
 `http://localhost:52611/api/agendamentos/agendamentosExistentes`
