@@ -87,20 +87,20 @@ Obs: A tabela de agendamentos vai ser populada pelo FrontEnd
 GET `http://localhost:52611/api/Salas/`
 
 ```yaml
- [
-   {
-      "id":1,
-      "nome":"Reunião",
-      "capacidade":"12",
-      "dataCriacao":"2020-06-14T21:00:00"
-   },
-   {
-      "id":2,
-      "nome":"Oval",
-      "capacidade":"45",
-      "dataCriacao":"2020-06-14T21:00:00"
-   }
- ]
+[
+  {
+     "id":1,
+     "nome":"Reunião",
+     "capacidade":"12",
+     "dataCriacao":"2020-06-14T21:00:00"
+  },
+  {
+     "id":2,
+     "nome":"Oval",
+     "capacidade":"45",
+     "dataCriacao":"2020-06-14T21:00:00"
+  }
+]
 ```
 
 ###### Recupera os agendamentos  existentes:
