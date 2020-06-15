@@ -100,7 +100,7 @@ GET `http://localhost:52611/api/Salas/`
     "capacidade":"45",
     "dataCriacao":"2020-06-14T21:00:00"
   }
-]
+] 
 ```
 
 ###### Recupera os agendamentos  existentes:
@@ -172,6 +172,6 @@ POST
     "titulo": "Reunião Semanal com Equipe",
     "dataHoraInicial": "2020-06-14T19:00:00",
     "dataHoraFinal": "2020-06-14T20:01:00"
-  },
+  }
 ```
 
