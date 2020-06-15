@@ -135,19 +135,15 @@ GET
 ```
 
 ###### Recupera agendamentos existentes caso a tentativa de reserva esteja dentro do intervalo solicitado: 
-GET FromBody
+GET `http://localhost:52611/api/agendamentos/agendamentosExistentes/idSala/dataHoraInicial/dataHoraFinal`
 
-`http://localhost:52611/api/agendamentos/agendamentosExistentes`
+#### Detalhes da requisição acima: 
 
-#### Corpo da Solicitação: 
+- idSala é o nome do parâmetro que recebe um inteiro: 1
+- dataHoraInicial é o nome do parâmetro que recebe um tipo date 2020-06-14T20:10:00
+- dataHoraFinal é o nome do parâmetro que recebe um tipo date 2020-06-14T20:10:00
 
-```yaml
-{
-    "idSala": 1, 
-    "dataHoraInicial": "2020-06-14T20:10:00",
-    "dataHoraFinal": "2020-06-14T20:58:00"
-}
-```
+Dentro da aplicação ficaria da seguinte forma: `http://localhost:52611/api/agendamentos/agendamentosExistentes/1/2020-06-14T20:10:00/2020-06-14T20:10:00`
 
 #### Retorno da API
 
