@@ -147,7 +147,7 @@ GET FromBody
 }
 ```
 #### Retorno da API
-```yaml
+```javascript
 [
   {
     "id": 2,
@@ -157,7 +157,7 @@ GET FromBody
     "dataHoraFinal": "2020-06-14T21:00:00"
   }
 ]
-
+```
 
 ###### Insere um agendamento:
 POST
