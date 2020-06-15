@@ -1,6 +1,6 @@
 # Controle De Salas - BackEnd
 
-Este projeto foi utilizado:
+Neste projeto foi utilizado as seguintes ferramentas para desenvolvimento:
 
 - ASP Core 3.1
 - Entity Framework Core
