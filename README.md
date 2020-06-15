@@ -139,7 +139,7 @@ GET FromBody
     "dataHoraInicial": "2020-06-14T20:10:00",
     "dataHoraFinal": "2020-06-14T20:58:00"
 }
-
+```
 #### Retorno da API
 ```
 [
