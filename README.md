@@ -6,7 +6,11 @@ Este projeto foi utilizado:
 - Entity Framework Core
 - SQLServer 
 - Visual Studio Community 2019
-- Visual Studio Code
+
+## Servidor de desenvolvimento
+
+Este projeto é composto de duas partes, sendo esta o BackEnd da aplicação. 
+O FrontEnd você encontra neste link: (https://github.com/consule/ControleDeSalasFront)
 
 ## Banco de Dados
 
@@ -34,8 +38,7 @@ Com as duas ferramentas acima instaladas vamos aos comandos para criação do ba
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
-GO
-`
+GO`
 ###### Tabela Agendamentos
 
 `USE [ControleDeSalas]
@@ -58,28 +61,51 @@ REFERENCES [dbo].[Salas] ([Id])
 GO
 
 ALTER TABLE [dbo].[Agendamentos] CHECK CONSTRAINT [FK_Agendamentos_Salas]
-GO
+GO`
 
+###### Populando a tabela Salas:
 
-`
+`insert into Salas (Nome, Capacidade, DataCriacao) values ('Reunião', 45, getdate())`
 
-## Servidor de desenvolvimento
+`insert into Salas (Nome, Capacidade, DataCriacao) values ('Oval', 10, getdate())`
 
-Este projeto é composto de duas partes, sendo esta o BackEnd da aplicação. 
-O FrontEnd você encontra neste link: (https://github.com/consule/ControleDeSalasFront)
+`insert into Salas (Nome, Capacidade, DataCriacao) values ('Descanso', 15, getdate())`
+
+Obs: A tabela de agendamentos vai ser populada pelo FrontEnd
 
 ## Executando o projeto
 
 1. Clone o projeto com o comando (https://github.com/consule/ControleDeSalasBackEnd.git) para uma pasta de sua preferencia. 
-2. Execute o comando `cd ControleDeSalasFront` para entrar na pasta que acabou de ser clonada
-3. Para a instalação dos modulos execute: `npm install` ou apenas `npm i` (Aguarde até que os modulos existenetes sejam instalados automáticamente);
-4. Execute `ng serve` para um servidor dev. 
-5. Navegue até `http://localhost:4200/`. 
+2. Abra a solução com o Visual Studio Community 2019 e execute;
 
-O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
+## APIs do Projeto
 
-## Atenção com as Services
+###### Recupera os agendamentos existentes: 
+GET `http://localhost:52611/api/Agendamentos/`
+```
+[
+  {
+    "id": 2,
+    "idSala": 1,
+    "titulo": "Delza Pina",
+    "dataHoraInicial": "2020-06-14T20:00:00",
+    "dataHoraFinal": "2020-06-14T21:00:00"
+  },
+  {
+    "id": 3,
+    "idSala": 1,
+    "titulo": "Delza Pina",
+    "dataHoraInicial": "2020-06-14T20:00:00",
+    "dataHoraFinal": "2020-06-14T21:00:00"
+  }
+]
+```
 
-Você pode encontrar as services no caminho `ControleDeSalasFront\src\app\services`. Elas são o ponto de entrada  que alimentam a aplicação e exibem os dados. 
+GET
+`http://localhost:52611/api/Salas/`
 
-Lembre-se sempre de conferir a porta de entrada existente (essa porta é gerada pelo FrontEnd(, e para facilitar existe uma variável em cada um desses arquivos com o nome `const apiUrl`.
+GET FromBody
+`http://localhost:52611/api/agendamentos/agendamentosExistentes`
+
+POST
+`http://localhost:52611/api/Agendamentos/`
