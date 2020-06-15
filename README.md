@@ -28,7 +28,8 @@ Com as duas ferramentas acima instaladas vamos aos comandos para criação do ba
 ##### Criando as tabelas Salas e Agendamentos:
 
 ###### Tabela Salas
-```CREATE TABLE [dbo].[Salas](
+```
+CREATE TABLE [dbo].[Salas](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Nome] [varchar](50) NOT NULL,
 	[Capacidade] [int] NOT NULL,
@@ -38,7 +39,8 @@ Com as duas ferramentas acima instaladas vamos aos comandos para criação do ba
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
-GO```
+GO
+```
 
 ###### Tabela Agendamentos
 
