@@ -64,7 +64,8 @@ REFERENCES [dbo].[Salas] ([Id])
 GO
 
 ALTER TABLE [dbo].[Agendamentos] CHECK CONSTRAINT [FK_Agendamentos_Salas]
-GO```
+GO
+```
 
 ###### Populando a tabela Salas:
 
