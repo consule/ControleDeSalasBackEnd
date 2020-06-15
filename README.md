@@ -86,7 +86,7 @@ Obs: A tabela de agendamentos vai ser populada pelo FrontEnd
 ###### Recupera as  salas existentes: 
 GET `http://localhost:52611/api/Salas/`
 
-```
+```yaml
 [
   {
     "id": 1,
@@ -106,7 +106,7 @@ GET `http://localhost:52611/api/Salas/`
 GET
 `http://localhost:52611/api/Agendamentos/`
 
-```
+```yaml
 [
   {
     "id": 1,
@@ -130,10 +130,11 @@ GET
     "dataHoraFinal": "2020-06-14T21:00:00"
   }
 ]
-```
+
 
 ###### Recupera agendamentos existentes caso a tentativa de reserva esteja dentro do intervalo solicitado: 
 GET FromBody
+
 `http://localhost:52611/api/agendamentos/agendamentosExistentes`
 
 #### Corpo da Solicitação: 
