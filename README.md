@@ -101,7 +101,7 @@ GET `http://localhost:52611/api/Salas/`
       "dataCriacao":"2020-06-14T21:00:00"
    }
  ]
- ```
+```
 
 ###### Recupera os agendamentos  existentes:
 GET
@@ -131,7 +131,7 @@ GET
     "dataHoraFinal": "2020-06-14T21:00:00"
   }
 ]
-
+```
 
 ###### Recupera agendamentos existentes caso a tentativa de reserva esteja dentro do intervalo solicitado: 
 GET FromBody
@@ -140,15 +140,17 @@ GET FromBody
 
 #### Corpo da Solicitação: 
 
-```
+```yaml
 {
     "idSala": 1, 
     "dataHoraInicial": "2020-06-14T20:10:00",
     "dataHoraFinal": "2020-06-14T20:58:00"
 }
 ```
+
 #### Retorno da API
-```json
+
+```yaml
 [
   {
     "id": 2,
@@ -164,7 +166,12 @@ GET FromBody
 POST
 `http://localhost:52611/api/Agendamentos/`
 #### Corpo da Solicitação: 
-```
-
+```yaml
+ {
+    "idSala": 1,
+    "titulo": "Reunião Semanal com Equipe",
+    "dataHoraInicial": "2020-06-14T19:00:00",
+    "dataHoraFinal": "2020-06-14T20:01:00"
+  },
 ```
 
