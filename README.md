@@ -16,9 +16,52 @@ Utilizaremos o [SQL Server 2019 Express](https://go.microsoft.com/fwlink/?linkid
 
 Com as duas ferramentas acima instaladas vamos aos comandos para criação do banco de dados, tabelas e insersão de dados nessas tabelas. 
 
-###Criação do banco de dados
-CREATE DATABASE ControleDeSalas
+### Criação do banco de dados
 
+##### Criando o Banco de Dados:
+`CREATE DATABASE ControleDeSalas`
+
+##### Criando as tabelas Salas e Agendamentos:
+
+###### Tabela Salas
+`CREATE TABLE [dbo].[Salas](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [varchar](50) NOT NULL,
+	[Capacidade] [int] NOT NULL,
+	[DataCriacao] [datetime] NOT NULL,
+ CONSTRAINT [PK_Salas] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+`
+###### Tabela Agendamentos
+
+`USE [ControleDeSalas]
+
+CREATE TABLE [dbo].[Agendamentos](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdSala] [int] NOT NULL,
+	[Titulo] [varchar](100) NOT NULL,
+	[DataHoraInicial] [datetime] NOT NULL,
+	[DataHoraFinal] [datetime] NOT NULL,
+ CONSTRAINT [PK_Agendamentos] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Agendamentos]  WITH CHECK ADD  CONSTRAINT [FK_Agendamentos_Salas] FOREIGN KEY([IdSala])
+REFERENCES [dbo].[Salas] ([Id])
+GO
+
+ALTER TABLE [dbo].[Agendamentos] CHECK CONSTRAINT [FK_Agendamentos_Salas]
+GO
+
+
+`
 
 ## Servidor de desenvolvimento
 
