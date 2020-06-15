@@ -101,7 +101,7 @@ GET `http://localhost:52611/api/Salas/`
     "dataCriacao": "2020-06-14T21:00:00"
   }
 ]
-```
+
 ###### Recupera os agendamentos  existentes:
 GET
 `http://localhost:52611/api/Agendamentos/`
@@ -147,7 +147,7 @@ GET FromBody
 }
 ```
 #### Retorno da API
-```
+```yaml
 [
   {
     "id": 2,
@@ -157,7 +157,7 @@ GET FromBody
     "dataHoraFinal": "2020-06-14T21:00:00"
   }
 ]
-```
+
 
 ###### Insere um agendamento:
 POST
