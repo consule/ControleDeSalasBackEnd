@@ -10,9 +10,9 @@ namespace ControleDeSalasBackEnd.Models
         public int IdAgendamento { get; set; }
         public int IdSala { get; set; }
         public string Titulo { get; set; }
-        public DateTime DataHoraInicial { get; set; }
-        public DateTime DataHoraFinal { get; set; }
-        public DateTime DataCriacaoAgendamento { get; set; }
+        public DateTime DataInicial { get; set; }
+        public DateTime DataFinal { get; set; }
+    
         public string NomeSala { get; set; }
         public int CapacidadeSala { get; set; }
     }

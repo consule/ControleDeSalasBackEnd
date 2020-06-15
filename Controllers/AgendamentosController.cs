@@ -31,7 +31,7 @@ namespace ControleDeSalasBackEnd.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] Agendamentos agendamentos)
         {
-            if(agendamentos == null)
+            if (agendamentos == null)
             {
                 return BadRequest();
             }
@@ -39,6 +39,12 @@ namespace ControleDeSalasBackEnd.Controllers
             _agendamentosRepository.Add(agendamentos);
 
             return Ok();
+        }
+
+        [HttpGet("agendamentosExistentes")]
+        public List<Agendamentos> GetAgendamentoExistente([FromBody] Agendamentos agendamentos) 
+        {
+            return _agendamentosRepository.GetAgendamentosExistentes(agendamentos);
         }
     }
 }

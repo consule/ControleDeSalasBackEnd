@@ -24,12 +24,11 @@ namespace ControleDeSalasBackEnd.Repositorio
                          from ag in grouping.DefaultIfEmpty()
                          select new AgendamentosEndSalas
                          {
-                             IdAgendamento = ag.Id,
+                            // IdAgendamento = ag.Id,
                              IdSala = ag.IdSala,
                              Titulo = ag.Titulo,
-                             DataHoraInicial = ag.DataHoraInicial,
-                             DataHoraFinal = ag.DataHoraFinal,
-                             DataCriacaoAgendamento = ag.DataCriacao, 
+                             DataInicial = ag.DataHoraInicial,
+                             DataFinal = ag.DataHoraFinal,                  
                              NomeSala = sl.Nome, 
                              CapacidadeSala = sl.Capacidade
                          }).ToList();   

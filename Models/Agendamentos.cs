@@ -12,6 +12,6 @@ namespace ControleDeSalasBackEnd.Models
         public string Titulo { get; set; }
         public DateTime DataHoraInicial { get; set; }
         public DateTime DataHoraFinal { get; set; }
-        public DateTime DataCriacao { get; set; }
+
     }
 }
