@@ -10,8 +10,11 @@ namespace ControleDeSalasBackEnd.Repositorio
     {
         // Retorna todos os agendamentos existentes
         List<Agendamentos> GetAll();
-        void Add(Agendamentos agendamentos);
-       
+
+        // Adiciona um novo agendamento
+        void Add(Agendamentos agendamentos);       
+
+        // Verifica se existe um agendamento existente conforme dados informados na requisição de reserva
         List<Agendamentos> GetAgendamentosExistentes(int idSala, DateTime dataHoraInicial, DateTime dataHoraFinal);
 
     }
