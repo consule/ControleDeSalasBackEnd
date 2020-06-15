@@ -28,7 +28,7 @@ Com as duas ferramentas acima instaladas vamos aos comandos para criação do ba
 ##### Criando as tabelas Salas e Agendamentos:
 
 ###### Tabela Salas
-`CREATE TABLE [dbo].[Salas](
+```CREATE TABLE [dbo].[Salas](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Nome] [varchar](50) NOT NULL,
 	[Capacidade] [int] NOT NULL,
@@ -38,10 +38,11 @@ Com as duas ferramentas acima instaladas vamos aos comandos para criação do ba
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
-GO`
+GO```
+
 ###### Tabela Agendamentos
 
-`USE [ControleDeSalas]
+```USE [ControleDeSalas]
 
 CREATE TABLE [dbo].[Agendamentos](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
@@ -61,15 +62,15 @@ REFERENCES [dbo].[Salas] ([Id])
 GO
 
 ALTER TABLE [dbo].[Agendamentos] CHECK CONSTRAINT [FK_Agendamentos_Salas]
-GO`
+GO```
 
 ###### Populando a tabela Salas:
 
-`insert into Salas (Nome, Capacidade, DataCriacao) values ('Reunião', 45, getdate())`
+```insert into Salas (Nome, Capacidade, DataCriacao) values ('Reunião', 45, getdate())```
 
-`insert into Salas (Nome, Capacidade, DataCriacao) values ('Oval', 10, getdate())`
+```insert into Salas (Nome, Capacidade, DataCriacao) values ('Oval', 10, getdate())```
 
-`insert into Salas (Nome, Capacidade, DataCriacao) values ('Descanso', 15, getdate())`
+```insert into Salas (Nome, Capacidade, DataCriacao) values ('Descanso', 15, getdate())```
 
 Obs: A tabela de agendamentos vai ser populada pelo FrontEnd
 
@@ -80,32 +81,83 @@ Obs: A tabela de agendamentos vai ser populada pelo FrontEnd
 
 ## APIs do Projeto
 
-###### Recupera os agendamentos existentes: 
-GET `http://localhost:52611/api/Agendamentos/`
+###### Recupera as  salas existentes: 
+GET `http://localhost:52611/api/Salas/`
 ```
 [
   {
+    "id": 1,
+    "nome": "Reunião",
+    "capacidade": "12",
+    "dataCriacao": "2020-06-14T21:00:00"
+  },
+  {
+    "id": 2,
+    "nome": "Oval",
+    "capacidade": "45",
+    "dataCriacao": "2020-06-14T21:00:00"
+  }
+]
+```
+###### Recupera os agendamentos  existentes:
+GET
+`http://localhost:52611/api/Agendamentos/`
+```
+[
+  {
+    "id": 1,
+    "idSala": 1,
+    "titulo": "Briefing de Projeto",
+    "dataHoraInicial": "2020-06-14T19:00:00",
+    "dataHoraFinal": "2020-06-14T19:01:00"
+  },
+  {
     "id": 2,
     "idSala": 1,
-    "titulo": "Delza Pina",
+    "titulo": "Sprint Review",
     "dataHoraInicial": "2020-06-14T20:00:00",
     "dataHoraFinal": "2020-06-14T21:00:00"
   },
   {
     "id": 3,
     "idSala": 1,
-    "titulo": "Delza Pina",
+    "titulo": "Brainstorm",
+    "dataHoraInicial": "2020-06-14T20:00:00",
+    "dataHoraFinal": "2020-06-14T21:00:00"
+  }
+]
+```
+###### Recupera agendamentos existentes caso a tentativa de reserva esteja dentro do intervalo solicitado: 
+GET FromBody
+`http://localhost:52611/api/agendamentos/agendamentosExistentes`
+
+#### Corpo da Solicitação: 
+
+```
+{
+    "idSala": 1, 
+    "dataHoraInicial": "2020-06-14T20:10:00",
+    "dataHoraFinal": "2020-06-14T20:58:00"
+}
+
+#### Retorno da API
+```
+[
+  {
+    "id": 2,
+    "idSala": 1,
+    "titulo": "Reunião",
     "dataHoraInicial": "2020-06-14T20:00:00",
     "dataHoraFinal": "2020-06-14T21:00:00"
   }
 ]
 ```
 
-GET
-`http://localhost:52611/api/Salas/`
-
-GET FromBody
-`http://localhost:52611/api/agendamentos/agendamentosExistentes`
-
+###### Insere um agendamento:
 POST
 `http://localhost:52611/api/Agendamentos/`
+#### Corpo da Solicitação: 
+```
+
+```
+
