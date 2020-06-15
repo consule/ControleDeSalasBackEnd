@@ -11,12 +11,11 @@ namespace ControleDeSalasBackEnd.Repositorio
     public class AgendamentosEndSalasRepository : IAgendamentosEndSalasRepository
     {
         private readonly AgendamentosEndSalasDbContext _contexto;
-
         public AgendamentosEndSalasRepository(AgendamentosEndSalasDbContext _ctx)
         {
             _contexto = _ctx;
-
         }
+        // Metodo que retorna os agendamentos e salas disponíveis utilizando RIGHT JOIN
         public List<AgendamentosEndSalas> GetAll()
         {
             var query = (from sl in _contexto.Salas 
@@ -24,7 +23,6 @@ namespace ControleDeSalasBackEnd.Repositorio
                          from ag in grouping.DefaultIfEmpty()
                          select new AgendamentosEndSalas
                          {
-                            // IdAgendamento = ag.Id,
                              IdSala = ag.IdSala,
                              Titulo = ag.Titulo,
                              DataInicial = ag.DataHoraInicial,

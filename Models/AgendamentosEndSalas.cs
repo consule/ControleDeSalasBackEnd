@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace ControleDeSalasBackEnd.Models
 {
+    // Mapeamento das tabelas Agendamentos e Salas do banco de dados ControleDeSalas para fazer comparação
     public class AgendamentosEndSalas
     {
         public int IdAgendamento { get; set; }

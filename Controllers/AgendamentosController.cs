@@ -17,7 +17,6 @@ namespace ControleDeSalasBackEnd.Controllers
         public AgendamentosController(IAgendamentosRepository agendamentoRepo)
         {
             _agendamentosRepository = agendamentoRepo;
-
         }
 
         [HttpGet]
@@ -25,8 +24,6 @@ namespace ControleDeSalasBackEnd.Controllers
         {
             return _agendamentosRepository.GetAll();
         }
-
-
 
         [HttpPost]
         public IActionResult Create([FromBody] Agendamentos agendamentos)
