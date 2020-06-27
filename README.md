@@ -1,3 +1,11 @@
+# Conhecimentos adquiridos ou aplicados:
+
+- Criar um projeto de API Web.
+- Adicionar uma classe de modelo e um contexto de banco de dados.
+- Scaffold de um controlador com métodos CRUD.
+- Configuração do roteamento, os caminhos de URL e os valores retornados.
+- Chamar a API Web com o Postman.
+
 # Controle De Salas - BackEnd
 
 Neste projeto foi utilizado as seguintes ferramentas para desenvolvimento:
